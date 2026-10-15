@@ -1,0 +1,34 @@
+IgnisPyroMeteo — 1.2.0-rc.1 — versão experimental
+
+INSTALADOR WINDOWS
+1. Descarregue IgnisPyroMeteo-1.2.0-rc.1-windows-x64-setup.exe.
+2. Execute o instalador e siga o assistente.
+3. Abra IgnisPyroMeteo pelo menu Iniciar.
+Não precisa de instalar Python, Git ou Node.js.
+Desinstalar: Definições do Windows > Aplicações > IgnisPyroMeteo.
+
+VERSÃO PORTÁTIL ZIP
+1. Descarregue IgnisPyroMeteo-1.2.0-rc.1-windows-x64-portable.zip.
+2. Clique com o botão direito > Extrair tudo.
+3. Abra IgnisPyroMeteo.exe dentro da pasta extraída.
+Não retire o executável da pasta; a pasta _internal contém ficheiros necessários.
+O ZIP "Source code" do GitHub é para programadores, não para instalar.
+
+REQUISITOS
+Windows x64. Compilação destinada a Windows 10/11; os resultados de teste constam
+da Release. Não existem ainda pacotes testados para Linux ou macOS.
+Executável sem assinatura digital de editor. Não desative as proteções do Windows.
+Descarregue apenas a partir do repositório oficial dsantananet.
+
+UTILIZAÇÃO
+Mantenha a janela IgnisPyro Meteo aberta. O painel abre no navegador.
+Clique em Atualizar IPMA, escolha uma estação e consulte o mapa e os gráficos.
+Pode exportar observações em CSV/GeoJSON. Internet é necessária para dados novos.
+Se a porta 8765 estiver ocupada, feche a outra instância antes de abrir novamente.
+Weather Underground exige configuração técnica de chave; o IPMA não exige chave.
+Fechar a janela do navegador não termina o servidor: feche a janela IgnisPyro Meteo.
+O histórico fica no navegador e não é apagado pela desinstalação.
+As tendências são experimentais e não substituem previsões ou avisos oficiais.
+
+CONTACTO
+https://github.com/dsantananet/ignispyro-meteo/issues

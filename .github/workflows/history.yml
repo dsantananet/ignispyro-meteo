@@ -1,0 +1,31 @@
+name: Preserve imported history
+on:
+  push:
+    branches: [main]
+    paths: ['history/source.bundle', '.github/workflows/history.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  preserve:
+    if: github.repository == 'dsantananet/ignispyro-meteo'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+      - name: Attach relevant history without changing current files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git bundle verify history/source.bundle
+          git fetch history/source.bundle main:refs/heads/imported-meteo-history
+          if git merge-base --is-ancestor imported-meteo-history HEAD; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          old=$(git rev-parse HEAD)
+          tree=$(git rev-parse HEAD^{tree})
+          imported=$(git rev-parse imported-meteo-history)
+          commit=$(git commit-tree "$tree" -p "$old" -p "$imported" -m 'Preserve original Meteo authorship and filtered development history')
+          git push origin "$commit":refs/heads/main

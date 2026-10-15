@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+meteo-data/
+
+.venv-meteo/
+.wu-key.enc
+*.wu-key.enc
+
+.build-env/
+build/
+dist/
+release/
+*.spec
+
+dist-current/

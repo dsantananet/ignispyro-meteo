@@ -1,0 +1,31 @@
+name: Aldeia do Bispo observations
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: aldeia-observations
+  cancel-in-progress: false
+jobs:
+  observations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Fetch public measurements
+        env:
+          WU_API_KEY: ${{ secrets.WU_API_KEY }}
+        run: python tools/update_aldeia.py
+      - name: Save measurements
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/aldeia.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Update Aldeia do Bispo observations'
+          git pull --rebase
+          git push
