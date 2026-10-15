@@ -8,8 +8,7 @@ Aldeia do Bispo (IALDEI10) e mantém o Borda d’Água digital para agronomia. N
 
 ## Instalação para utilizadores
 
-O candidato Windows x64 está em validação; **ainda não existe uma Release publicada**.
-As versões aprovadas ficarão em [Releases](https://github.com/dsantananet/ignispyro-meteo/releases).
+A versão experimental Windows x64 está publicada em [Releases](https://github.com/dsantananet/ignispyro-meteo/releases/tag/v1.2.0-rc.1), com instalador, ZIP portátil, instruções e SHA256.
 Descarregue `IgnisPyroMeteo-…-windows-x64-setup.exe`, execute o assistente e abra IgnisPyroMeteo
 no menu Iniciar. Python, Node.js e Git não são necessários.
 O painel abre no navegador; mantenha a pequena janela IgnisPyro Meteo aberta.
@@ -27,8 +26,8 @@ O ZIP de código-fonte não é um instalador.
 
 Pacote candidato para Windows 10/11 x64 e navegador moderno. Usa apenas a interface local 127.0.0.1,
 porta 8765; Internet é necessária para obter novas observações. Histórico guardado no navegador.
-Instalação em máquina limpa, Linux e macOS ainda não validados. Não anunciamos suporte nesses sistemas.
-Capturas reais da versão preparada serão acrescentadas após validação visual.
+Instalação, dois arranques e desinstalação passaram num runner Windows novo e no Windows local, com os ficheiros descarregados da Release. Linux e macOS não foram testados.
+![Painel com o logótipo e Aldeia do Bispo](docs/screenshots/meteo-windows.png)
 
 ## Funcionalidades e limitações
 
@@ -60,3 +59,4 @@ A versão candidata não é uma Release estável.
 
 Licença [MIT](LICENSE), conforme declaração original; [avisos](LEGAL-NOTICE.md). Leaflet conserva a licença original.
 Contacto: [dsantananet](https://github.com/dsantananet); problemas em Issues deste repositório.
+
