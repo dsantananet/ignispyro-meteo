@@ -25,10 +25,15 @@ Mantenha a janela IgnisPyro Meteo aberta. O painel abre no navegador.
 Clique em Atualizar IPMA, escolha uma estação e consulte o mapa e os gráficos.
 Pode exportar observações em CSV/GeoJSON. Internet é necessária para dados novos.
 Se a porta 8765 estiver ocupada, feche a outra instância antes de abrir novamente.
-Weather Underground exige configuração técnica de chave; o IPMA não exige chave.
+A Aldeia do Bispo (IALDEI10) está integrada automaticamente.
+Para outra estação pessoal, introduza o identificador e a chave quando solicitado.
+Escolha uma estação, uma seleção ou todas para carregar os meteogramas ECMWF.
+No separador Previsão de risco pode copiar o boletim para análise de incêndios.
+O Borda de Água digital continua disponível para agronomia.
 Fechar a janela do navegador não termina o servidor: feche a janela IgnisPyro Meteo.
 O histórico fica no navegador e não é apagado pela desinstalação.
-As tendências são experimentais e não substituem previsões ou avisos oficiais.
+Os gráficos distinguem observações e previsão numérica ECMWF.
+O boletim não substitui avisos oficiais; índices sem fonte não são inventados.
 
 CONTACTO
 https://github.com/dsantananet/ignispyro-meteo/issues

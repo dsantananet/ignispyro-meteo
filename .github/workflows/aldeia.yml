@@ -1,5 +1,8 @@
 name: Aldeia do Bispo observations
 on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/aldeia.yml"]
   workflow_dispatch:
   schedule:
     - cron: '7,22,37,52 * * * *'
