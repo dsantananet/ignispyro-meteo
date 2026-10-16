@@ -7,3 +7,5 @@
 .brand{font-size:2.3rem;font-weight:800;color:#f5f8fc;text-decoration:none;letter-spacing:-1px}.brand span{color:#ff7b20}.app-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px}.app-actions span{font-size:.85rem;color:#a8b8cc}dialog{max-width:600px;border:1px solid #4b617b;border-radius:14px;background:#162336;color:#fff;padding:24px}dialog::backdrop{background:#0009}dialog li{margin:10px 0}
 
 .brand img{width:300px;max-width:100%;height:auto;border-radius:8px} .meteograms svg{width:100%;background:#101d2d} textarea{width:100%;min-height:230px;background:#101d2d;color:white;padding:14px} [hidden]{display:none!important} .station-options{max-height:240px;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px}.station-options label{display:flex}.station-options input{width:auto}.tabs{display:flex;gap:12px;margin:20px 0}
+
+@media(max-width:600px){header{flex-direction:column;align-items:stretch;padding:16px}main{padding:16px}#map{height:340px}dialog{max-width:calc(100% - 24px)}.thresholds label{width:calc(50% - 6px)}.tabs{flex-wrap:wrap}}

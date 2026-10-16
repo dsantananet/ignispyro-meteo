@@ -8,7 +8,7 @@ const fmt=v=>v===null||v===undefined?'—':Number(v).toFixed(1);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 try { const stored=JSON.parse(localStorage.getItem('flame-meteo-v1')||'[]'); rows=Array.isArray(stored)?stored.filter(r=>r&&typeof r.id==='string'&&typeof r.time==='string'&&Number.isFinite(r.lon)&&Number.isFinite(r.lat)):[]; } catch { rows=[]; }
 function save(){try{localStorage.setItem('flame-meteo-v1',JSON.stringify(rows));return true;}catch{return false;}}
-function download(name,body,type){const url=URL.createObjectURL(new Blob([body],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function download(name,body,type){if(window.IgnisPyroAndroid){window.IgnisPyroAndroid.save(name,body,type);return;}const url=URL.createObjectURL(new Blob([body],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function configure(){
   const selected=$('station').value;
   const stations=new Map(rows.map(r=>[r.id,r.name]));
@@ -46,6 +46,7 @@ $('csv').onclick=()=>download('ignispyro-observacoes.csv',csv(rows),'text/csv;ch
 $('forecast-csv').onclick=()=>download('ignispyro-ecmwf.csv',exportModels(),'text/csv;charset=utf-8');
 $('wu').onclick=()=>{$('personal-dialog').showModal();};
 $('personal-cancel').onclick=()=>{$('personal-key').value='';$('personal-dialog').close();};
+if(!['127.0.0.1','localhost'].includes(location.hostname)){$('wu').disabled=true;$('wu').title='Novas estações pessoais requerem a aplicação Windows local.';}
 $('personal-form').onsubmit=async event=>{event.preventDefault();const key=$('personal-key').value;$('personal-key').value='';try{const response=await fetch('/api/station',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({station:$('personal-id').value.trim(),key})});if(!response.ok)throw Error();const data=await response.json();rows=merge(rows,data);save();configure();$('station').value=data[0].id;render();$('personal-dialog').close();$('wu-status').textContent='Estação adicionada nesta sessão; chave não guardada.';}catch{$('wu-status').textContent='Não foi possível ligar à estação. Confirme os acessos e a ligação.';}};
 async function aldeia(){try{let data;try{data=await fetchJSON('/api/wu');}catch{data=await fetchJSON('https://raw.githubusercontent.com/dsantananet/ignispyro-meteo/main/data/aldeia.json');data=data.observations;}if(!Array.isArray(data)||!data.length)throw Error();rows=merge(rows,data);save();configure();$('station').value='IALDEI10';render();$('wu-status').textContent='Aldeia do Bispo integrada · última observação '+data.at(-1).time;}catch{$('wu-status').textContent='Aldeia do Bispo: atualização indisponível. O histórico, quando existe, mantém a sua data original.';}}
 aldeia();

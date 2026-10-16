@@ -1,0 +1,54 @@
+name: Android APK experimental
+on:
+  push:
+    branches: [main]
+    paths: ['android/**', 'web/**', '.github/workflows/android.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: android-preview
+  cancel-in-progress: false
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/*.test.mjs
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      # Preserve the experimental signing identity between builds; never commit it.
+      - uses: actions/cache@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: android-preview-key-v1
+      - name: Build and lint Android
+        working-directory: android
+        run: gradle :app:assembleDebug :app:lintDebug --no-daemon
+      - name: Package experimental APK
+        run: |
+          mkdir -p release
+          cp android/app/build/outputs/apk/debug/app-debug.apk release/IgnisPyroMeteo-android-experimental.apk
+          cd release
+          sha256sum *.apk > SHA256SUMS-android.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: IgnisPyroMeteo-android-experimental
+          path: release/*
+      - name: Publish Android experimental download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view android-preview >/dev/null 2>&1 || gh release create android-preview --target "$GITHUB_SHA" --prerelease --title 'Android · versão experimental' --notes 'APK experimental para Android 8 ou superior. Interface incluída; Internet necessária para novos dados. Compilação e lint automáticos; ainda sem validação em dispositivo físico. Assinatura de desenvolvimento: a identidade é preservada por cache, mas pode mudar se o cache expirar. PWA online recomendada para atualizações contínuas. Novas estações pessoais requerem a aplicação local Windows.'
+          gh release upload android-preview release/* --clobber

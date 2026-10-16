@@ -13,3 +13,7 @@ release/
 *.spec
 
 dist-current/
+
+android/.gradle/
+android/local.properties
+site-dist/

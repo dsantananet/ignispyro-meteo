@@ -6,6 +6,27 @@ Aplicação meteorológica para consultar observações de estações em Portuga
 visualizar meteogramas ECMWF via Open-Meteo e exportar CSV/GeoJSON. Integra a estação
 Aldeia do Bispo (IALDEI10) e mantém o Borda d’Água digital para agronomia. Não depende da linguagem FlameLang.
 
+## Descarregar e instalar
+
+| Versão | Ligação | Como utilizar |
+| --- | --- | --- |
+| **Windows 10/11 · instalador x64** | [Descarregar EXE](https://github.com/dsantananet/ignispyro-meteo/releases/download/v1.2.0-rc.1/IgnisPyroMeteo-1.2.0-rc.1-windows-x64-setup.exe) | Executar e seguir o assistente. |
+| **Windows · portátil x64** | [Descarregar ZIP portátil](https://github.com/dsantananet/ignispyro-meteo/releases/download/v1.2.0-rc.1/IgnisPyroMeteo-1.2.0-rc.1-windows-x64-portable.zip) | Extrair o ZIP e executar IgnisPyroMeteo.exe; não requer instalação. |
+| **Android · instalar pelo Chrome (PWA)** | [Abrir versão online](https://dsantananet.github.io/ignispyro-meteo/) | Chrome → ⋮ → Adicionar ao ecrã principal → Instalar. |
+| **Android 8+ · APK experimental** | [Descarregar APK](https://github.com/dsantananet/ignispyro-meteo/releases/download/android-preview/IgnisPyroMeteo-android-experimental.apk) · [Estado da compilação](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/android.yml) | Abrir o APK e autorizar a instalação por este navegador quando o Android pedir. |
+| **Online · computador, telemóvel e tablet** | [Abrir no navegador](https://dsantananet.github.io/ignispyro-meteo/) · [Estado da publicação](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/online.yml) | Sem descarregar nem instalar programas. |
+
+[Todos os ficheiros e versões](https://github.com/dsantananet/ignispyro-meteo/releases).
+Windows mantém a versão candidata 1.2.0-rc.1. O APK e o endereço online só ficam disponíveis depois de os respetivos fluxos terminarem com sucesso. Um erro 404 indica que a publicação ainda não terminou ou falhou; consulte o estado acima.
+
+### Android: qual escolher?
+
+**Recomendado: PWA pelo Chrome**, com atualizações da interface e sem permissões de instalação de APK. Abra a versão online, aguarde a primeira carga e use **Instalar aplicação** ou o menu do Chrome. A interface e o histórico já guardado ficam disponíveis offline; novas observações e previsões exigem Internet. O histórico é específico de cada navegador/dispositivo.
+
+O **APK experimental** inclui a interface e permite exportar CSV/GeoJSON pelo seletor de ficheiros Android. Requer Android System WebView atualizado. Tem assinatura de desenvolvimento e ainda necessita de validação num dispositivo real; não é uma versão de produção nem uma publicação na Play Store. Se o cache da assinatura expirar, uma atualização poderá exigir reinstalação: exporte primeiro o histórico. Não há permissões de localização ou acesso geral ao armazenamento.
+
+**Estações pessoais:** online e Android consultam a Aldeia do Bispo pelo resumo público, sem pedir chaves. Adicionar outras estações Weather Underground requer a aplicação Windows local; o botão aparece desativado nos outros ambientes.
+
 ## Instalação para utilizadores
 
 A versão experimental Windows x64 está publicada em [Releases](https://github.com/dsantananet/ignispyro-meteo/releases/tag/v1.2.0-rc.1), com instalador, ZIP portátil, instruções e SHA256.
