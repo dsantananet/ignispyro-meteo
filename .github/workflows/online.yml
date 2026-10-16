@@ -23,9 +23,18 @@ jobs:
         with:
           node-version: '22'
       - run: node --test tests/*.test.mjs
+      - name: Check GitHub Pages activation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh api "repos/$GITHUB_REPOSITORY/pages" > /tmp/pages.json; then
+            echo "::error::GitHub Pages is not enabled or is inaccessible. Open Settings > Pages > Build and deployment > Source, select GitHub Actions, then run this workflow again."
+            echo '### Publicação bloqueada pela configuração do repositório' >> "$GITHUB_STEP_SUMMARY"
+            echo 'Abra https://github.com/'"$GITHUB_REPOSITORY"'/settings/pages e selecione **Build and deployment → Source → GitHub Actions**. Depois execute novamente este workflow. Os testes da aplicação passaram; o token de Actions não pode ativar o Pages pela primeira vez.' >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          python -c 'import json,sys; p=json.load(open("/tmp/pages.json")); sys.exit(0 if p.get("build_type")=="workflow" else "Selecione GitHub Actions em Settings > Pages > Source.")'
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web/meteo
