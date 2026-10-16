@@ -19,6 +19,17 @@ Aldeia do Bispo (IALDEI10) e mantém o Borda d’Água digital para agronomia. N
 [Todos os ficheiros e versões](https://github.com/dsantananet/ignispyro-meteo/releases).
 Windows mantém a versão candidata 1.2.0-rc.1. O APK e o endereço online só ficam disponíveis depois de os respetivos fluxos terminarem com sucesso. Um erro 404 indica que a publicação ainda não terminou ou falhou; consulte o estado acima.
 
+### Ativar a versão online (configuração inicial do repositório)
+
+O primeiro lançamento confirmou que o GitHub Pages ainda não está ativo e que o token de Actions não tem permissão administrativa para o criar. O endereço online fica **pendente desta ativação**:
+
+1. Abrir [Settings → Pages](https://github.com/dsantananet/ignispyro-meteo/settings/pages).
+2. Em **Build and deployment → Source**, selecionar **GitHub Actions**.
+3. Abrir [Online · Android PWA](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/online.yml), escolher **Run workflow → main → Run workflow**.
+4. Aguardar a execução verde e abrir o endereço online da tabela.
+
+Depois desta configuração, as alterações à interface são publicadas automaticamente.
+
 ### Android: qual escolher?
 
 **Recomendado: PWA pelo Chrome**, com atualizações da interface e sem permissões de instalação de APK. Abra a versão online, aguarde a primeira carga e use **Instalar aplicação** ou o menu do Chrome. A interface e o histórico já guardado ficam disponíveis offline; novas observações e previsões exigem Internet. O histórico é específico de cada navegador/dispositivo.
