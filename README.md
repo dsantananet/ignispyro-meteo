@@ -17,7 +17,7 @@ Aldeia do Bispo (IALDEI10) e mantém o Borda d’Água digital para agronomia. N
 | **Online · computador, telemóvel e tablet** | [Abrir no navegador](https://dsantananet.github.io/ignispyro-meteo/) · [Estado da publicação](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/online.yml) | Sem descarregar nem instalar programas. |
 
 [Todos os ficheiros e versões](https://github.com/dsantananet/ignispyro-meteo/releases).
-Windows mantém a versão candidata 1.2.0-rc.1. O APK e o endereço online só ficam disponíveis depois de os respetivos fluxos terminarem com sucesso. Um erro 404 indica que a publicação ainda não terminou ou falhou; consulte o estado acima.
+Windows mantém a versão candidata 1.2.0-rc.1. **APK Android publicado**: compilação, lint e publicação [concluídos com sucesso](https://github.com/dsantananet/ignispyro-meteo/actions/runs/38893479708). **Online/PWA pendente de ativação do GitHub Pages**, conforme instruções abaixo; até lá o endereço pode apresentar erro 404.
 
 ### Ativar a versão online (configuração inicial do repositório)
 
