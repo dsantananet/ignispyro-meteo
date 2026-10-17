@@ -11,3 +11,5 @@
 @media(max-width:600px){header{flex-direction:column;align-items:stretch;padding:16px}main{padding:16px}#map{height:340px}dialog{max-width:calc(100% - 24px)}.thresholds label{width:calc(50% - 6px)}.tabs{flex-wrap:wrap}}
 
 #sounding-panel{margin:24px 0;padding:20px;background:#162336;border-radius:12px;min-width:0}#sounding-panel summary{font-weight:700;cursor:pointer}#sounding-plot svg{display:block;width:100%;max-width:900px;height:auto;margin:auto}#sounding-status{overflow-wrap:anywhere}
+
+#sounding-plot{overflow:hidden}@media(max-width:600px){.toolbar .timeline{flex:1 1 100%;width:100%;min-width:0}.timeline input{min-width:0;margin:0}.timeline output{overflow-wrap:anywhere}}
