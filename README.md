@@ -17,7 +17,7 @@ Aldeia do Bispo (IALDEI10) e mantém o Borda d’Água digital para agronomia. N
 | **Online · computador, telemóvel e tablet** | [Abrir no navegador](https://dsantananet.github.io/ignispyro-meteo/) · [Estado da publicação](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/online.yml) | Sem descarregar nem instalar programas. |
 
 [Todos os ficheiros e versões](https://github.com/dsantananet/ignispyro-meteo/releases).
-Windows mantém a versão candidata 1.2.0-rc.2. **APK Android publicado**: compilação, lint e publicação [concluídos com sucesso](https://github.com/dsantananet/ignispyro-meteo/actions/runs/38893479708). **Online/PWA pendente de ativação do GitHub Pages**, conforme instruções abaixo; até lá o endereço pode apresentar erro 404.
+Windows atualizado para a versão candidata 1.2.0-rc.2, com tefigramas integrados. **APK Android 1.2.0-rc.2 com tefigramas publicado**: compilação, lint e publicação [concluídos com sucesso](https://github.com/dsantananet/ignispyro-meteo/actions/runs/39066053480). **Online/PWA pendente de ativação do GitHub Pages**, conforme instruções abaixo; até lá o endereço pode apresentar erro 404.
 
 ### Ativar a versão online (configuração inicial do repositório)
 
@@ -99,4 +99,4 @@ Na estação selecionada, abrir **Perfil vertical / Tefigrama** e carregar o per
 
 A localização/altitude da grelha e a distância à estação são indicadas; a altitude real da estação não é fornecida pelo catálogo atual. Não é uma radiossondagem observada. O ciclo de inicialização não é fornecido por esta resposta da API. LCL/LFC, trajetória da parcela, adiabáticas saturadas e Haines ainda não implementados. Inversões só são detetadas entre níveis válidos adjacentes, podendo faltar camadas finas. Novos dados requerem Internet e estão sujeitos aos limites Open-Meteo. Fonte: https://open-meteo.com/en/docs/gfs-api (CC BY 4.0).
 
-Validação inicial: 24 testes JavaScript, incluindo geometria T–entropia, níveis sob a superfície, dados ausentes e inversões. Consulta real GFS em 40°N, 7°W devolveu HTTP 200 e perfis válidos. APK ainda requer teste em dispositivo físico; não constitui validação científica operacional.
+Validação: 24 testes JavaScript e 8 Python passaram. Teste Chrome passou com seleção horária, exportação CSV, dados ausentes, exclusão de níveis sob a superfície e largura móvel. Capturas desktop/móvel verificadas. Consulta real GFS em 40°N, 7°W devolveu HTTP 200 e perfis válidos. APK ainda requer teste em dispositivo físico; não constitui validação científica operacional.
