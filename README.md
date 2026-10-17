@@ -10,14 +10,14 @@ Aldeia do Bispo (IALDEI10) e mantém o Borda d’Água digital para agronomia. N
 
 | Versão | Ligação | Como utilizar |
 | --- | --- | --- |
-| **Windows 10/11 · instalador x64** | [Descarregar EXE](https://github.com/dsantananet/ignispyro-meteo/releases/download/v1.2.0-rc.1/IgnisPyroMeteo-1.2.0-rc.1-windows-x64-setup.exe) | Executar e seguir o assistente. |
-| **Windows · portátil x64** | [Descarregar ZIP portátil](https://github.com/dsantananet/ignispyro-meteo/releases/download/v1.2.0-rc.1/IgnisPyroMeteo-1.2.0-rc.1-windows-x64-portable.zip) | Extrair o ZIP e executar IgnisPyroMeteo.exe; não requer instalação. |
+| **Windows 10/11 · instalador x64** | [Descarregar EXE](https://github.com/dsantananet/ignispyro-meteo/releases/download/v1.2.0-rc.2/IgnisPyroMeteo-1.2.0-rc.2-windows-x64-setup.exe) | Executar e seguir o assistente. |
+| **Windows · portátil x64** | [Descarregar ZIP portátil](https://github.com/dsantananet/ignispyro-meteo/releases/download/v1.2.0-rc.2/IgnisPyroMeteo-1.2.0-rc.2-windows-x64-portable.zip) | Extrair o ZIP e executar IgnisPyroMeteo.exe; não requer instalação. |
 | **Android · instalar pelo Chrome (PWA)** | [Abrir versão online](https://dsantananet.github.io/ignispyro-meteo/) | Chrome → ⋮ → Adicionar ao ecrã principal → Instalar. |
 | **Android 8+ · APK experimental** | [Descarregar APK](https://github.com/dsantananet/ignispyro-meteo/releases/download/android-preview/IgnisPyroMeteo-android-experimental.apk) · [Estado da compilação](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/android.yml) | Abrir o APK e autorizar a instalação por este navegador quando o Android pedir. |
 | **Online · computador, telemóvel e tablet** | [Abrir no navegador](https://dsantananet.github.io/ignispyro-meteo/) · [Estado da publicação](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/online.yml) | Sem descarregar nem instalar programas. |
 
 [Todos os ficheiros e versões](https://github.com/dsantananet/ignispyro-meteo/releases).
-Windows mantém a versão candidata 1.2.0-rc.1. **APK Android publicado**: compilação, lint e publicação [concluídos com sucesso](https://github.com/dsantananet/ignispyro-meteo/actions/runs/38893479708). **Online/PWA pendente de ativação do GitHub Pages**, conforme instruções abaixo; até lá o endereço pode apresentar erro 404.
+Windows mantém a versão candidata 1.2.0-rc.2. **APK Android publicado**: compilação, lint e publicação [concluídos com sucesso](https://github.com/dsantananet/ignispyro-meteo/actions/runs/38893479708). **Online/PWA pendente de ativação do GitHub Pages**, conforme instruções abaixo; até lá o endereço pode apresentar erro 404.
 
 ### Ativar a versão online (configuração inicial do repositório)
 
@@ -40,7 +40,7 @@ O **APK experimental** inclui a interface e permite exportar CSV/GeoJSON pelo se
 
 ## Instalação para utilizadores
 
-A versão experimental Windows x64 está publicada em [Releases](https://github.com/dsantananet/ignispyro-meteo/releases/tag/v1.2.0-rc.1), com instalador, ZIP portátil, instruções e SHA256.
+A versão experimental Windows x64 está publicada em [Releases](https://github.com/dsantananet/ignispyro-meteo/releases/tag/v1.2.0-rc.2), com instalador, ZIP portátil, instruções e SHA256.
 Descarregue `IgnisPyroMeteo-…-windows-x64-setup.exe`, execute o assistente e abra IgnisPyroMeteo
 no menu Iniciar. Python, Node.js e Git não são necessários.
 O painel abre no navegador; mantenha a pequena janela IgnisPyro Meteo aberta.
@@ -82,7 +82,7 @@ e compile `packaging/windows.iss` com Inno Setup 6.7.3.
 O guia [METEO.md](METEO.md) mantém detalhes históricos; os comandos de desenvolvimento não são necessários
 para instalar o pacote autónomo. Conteúdos antigos sobre alojamento FlameLang devem ser revistos antes da migração pública.
 
-## Novidades do candidato 1.2.0-rc.1
+## Novidades do candidato 1.2.0-rc.2
 
 Separação do projeto, arranque gráfico, pacote Windows autónomo e restrição de acesso HTTP aos recursos do painel.
 A versão candidata não é uma Release estável.
@@ -99,4 +99,4 @@ Na estação selecionada, abrir **Perfil vertical / Tefigrama** e carregar o per
 
 A localização/altitude da grelha e a distância à estação são indicadas; a altitude real da estação não é fornecida pelo catálogo atual. Não é uma radiossondagem observada. O ciclo de inicialização não é fornecido por esta resposta da API. LCL/LFC, trajetória da parcela, adiabáticas saturadas e Haines ainda não implementados. Inversões só são detetadas entre níveis válidos adjacentes, podendo faltar camadas finas. Novos dados requerem Internet e estão sujeitos aos limites Open-Meteo. Fonte: https://open-meteo.com/en/docs/gfs-api (CC BY 4.0).
 
-Validação inicial: 24 testes JavaScript, incluindo geometria T–entropia, níveis sob a superfície, dados ausentes e inversões. Consulta real GFS em 40°N, 7°W devolveu HTTP 200 e perfis válidos. Interface e APK ainda requerem teste visual e em dispositivo; não constitui validação científica operacional.
+Validação inicial: 24 testes JavaScript, incluindo geometria T–entropia, níveis sob a superfície, dados ausentes e inversões. Consulta real GFS em 40°N, 7°W devolveu HTTP 200 e perfis válidos. APK ainda requer teste em dispositivo físico; não constitui validação científica operacional.

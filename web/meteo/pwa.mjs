@@ -1,7 +1,7 @@
 const install=document.getElementById('install'),update=document.getElementById('update'),status=document.getElementById('app-status');
 let prompt=null,registration=null,applying=false;
 const standalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone;
-if(standalone()){install.hidden=true;status.textContent='IgnisPyro instalada · versão 1.2.0-rc.1';}
+if(standalone()){install.hidden=true;status.textContent='IgnisPyro instalada · versão 1.2.0-rc.2';}
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();prompt=event;install.textContent='Instalar IgnisPyro';});
 window.addEventListener('appinstalled',()=>{install.hidden=true;prompt=null;status.textContent='IgnisPyro instalada. Abra-a pelo menu Iniciar ou pelo ícone criado pelo navegador.';});
 install.onclick=async()=>{if(prompt){await prompt.prompt();const choice=await prompt.userChoice;status.textContent=choice.outcome==='accepted'?'Instalação aceite.':'Instalação cancelada.';prompt=null;}else{document.getElementById('install-help').showModal();}};
@@ -11,4 +11,4 @@ function watch(reg){if(reg.waiting)pending();reg.addEventListener('updatefound',
 update.onclick=async()=>{if(!registration){status.textContent='Atualizações instaláveis requerem HTTPS ou o servidor local.';return;}if(registration.waiting){applying=true;registration.waiting.postMessage({type:'APPLY_UPDATE'});return;}try{await registration.update();if(registration.waiting)pending();else status.textContent='Verificação solicitada. Uma nova versão será indicada quando estiver pronta.';}catch{status.textContent='Sem ligação para verificar atualizações. O histórico local continua disponível.';}};
 if(!window.IgnisPyroAndroid&&'serviceWorker' in navigator&&window.isSecureContext){navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(reg=>{registration=reg;watch(reg);}).catch(()=>{status.textContent='Não foi possível preparar a instalação offline.';});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(applying)location.reload();});document.addEventListener('visibilitychange',()=>{if(!document.hidden&&registration)registration.update().catch(()=>{});});}else{status.textContent='Abra num endereço HTTPS para instalar; a consulta no navegador continua disponível.';}
 
-if(window.IgnisPyroAndroid){install.hidden=true;update.onclick=()=>window.open('https://github.com/dsantananet/ignispyro-meteo/releases/tag/android-preview','_self');update.textContent='Descarregar atualizações Android';status.textContent='Android · versão experimental 1.2.0-rc.1';}
+if(window.IgnisPyroAndroid){install.hidden=true;update.onclick=()=>window.open('https://github.com/dsantananet/ignispyro-meteo/releases/tag/android-preview','_self');update.textContent='Descarregar atualizações Android';status.textContent='Android · versão experimental 1.2.0-rc.2';}
