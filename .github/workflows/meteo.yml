@@ -26,6 +26,7 @@ jobs:
           npm install --prefix /tmp/meteo-browser playwright@1.58.2
           NODE_PATH=/tmp/meteo-browser/node_modules node tests/browser-smoke.cjs
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: tephigram-browser-screenshots
           path: tephigram-*.png
