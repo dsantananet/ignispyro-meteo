@@ -1,7 +1,7 @@
-# IgnisPyro Meteo 1.2.0-rc.2
+# IgnisPyro Meteo 1.2.0-rc.3
 
-Integra perfis verticais e tefigramas experimentais por estação: 48 horas UTC de previsão GFS Global, temperatura, ponto de orvalho, vento em altitude, CAPE/CIN do modelo, deteção de inversões e exportação CSV/SVG. Identifica grelha, distância e altitude do modelo; exclui níveis abaixo da superfície.
+Leitura do tefigrama orientada para incêndios rurais: convecção ambiente, ar seco em altitude, inversões e vento acima do terreno. Descrições atualizadas por estação/hora e repetidas na área Previsão de risco com identificação do perfil. Não atribui classe de perigo/risco nem prevê a coluna do incêndio.
 
-O painel distingue o GFS dos meteogramas ECMWF e de observações de superfície. Parcela de ar, LCL/LFC, adiabáticas saturadas e Haines não integram esta versão. Não é uma radiossondagem observada nem produto operacional validado.
+Painel reorganizado com gráfico e interpretação lado a lado no computador, cartões adaptados ao telemóvel, tabela recolhível, legenda e notas metodológicas. Mantém dados GFS identificados separadamente do ECMWF dos meteogramas.
 
-Windows x64: instalador e ZIP portátil. Android 8+: APK experimental no canal android-preview. Online depende da ativação de GitHub Pages. APK ainda sem teste em dispositivo físico.
+Windows x64: instalador e portátil. Android 8+: APK experimental em android-preview. Online: https://dsantananet.github.io/ignispyro-meteo/. Parcela de ar, LCL/LFC e Haines ainda indisponíveis; APK sem validação em dispositivo físico.
