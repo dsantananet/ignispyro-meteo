@@ -17,18 +17,11 @@ Aldeia do Bispo (IALDEI10) e mantém o Borda d’Água digital para agronomia. N
 | **Online · computador, telemóvel e tablet** | [Abrir no navegador](https://dsantananet.github.io/ignispyro-meteo/) · [Estado da publicação](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/online.yml) | Sem descarregar nem instalar programas. |
 
 [Todos os ficheiros e versões](https://github.com/dsantananet/ignispyro-meteo/releases).
-Windows atualizado para a versão candidata 1.2.0-rc.2, com tefigramas integrados. **APK Android 1.2.0-rc.2 com tefigramas publicado**: compilação, lint e publicação [concluídos com sucesso](https://github.com/dsantananet/ignispyro-meteo/actions/runs/39066053480). **Online/PWA pendente de ativação do GitHub Pages**, conforme instruções abaixo; até lá o endereço pode apresentar erro 404.
+Windows atualizado para a versão candidata 1.2.0-rc.2, com tefigramas integrados. **APK Android 1.2.0-rc.2 com tefigramas publicado**: compilação, lint e publicação [concluídos com sucesso](https://github.com/dsantananet/ignispyro-meteo/actions/runs/39066053480). **Online/PWA ativo**: [abrir IgnisPyro Meteo](https://dsantananet.github.io/ignispyro-meteo/). Publicação verificada com sucesso em 17/10/2026.
 
-### Ativar a versão online (configuração inicial do repositório)
+### Versão online ativa
 
-O primeiro lançamento confirmou que o GitHub Pages ainda não está ativo e que o token de Actions não tem permissão administrativa para o criar. O endereço online fica **pendente desta ativação**:
-
-1. Abrir [Settings → Pages](https://github.com/dsantananet/ignispyro-meteo/settings/pages).
-2. Em **Build and deployment → Source**, selecionar **GitHub Actions**.
-3. Abrir [Online · Android PWA](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/online.yml), escolher **Run workflow → main → Run workflow**.
-4. Aguardar a execução verde e abrir o endereço online da tabela.
-
-Depois desta configuração, as alterações à interface são publicadas automaticamente.
+Abra https://dsantananet.github.io/ignispyro-meteo/. No Android, utilize Chrome → Instalar aplicação ou Adicionar ao ecrã principal. GitHub Pages está configurado para GitHub Actions; alterações à interface são publicadas automaticamente pelo fluxo Online · Android PWA.
 
 ### Android: qual escolher?
 
