@@ -92,3 +92,11 @@ A versão candidata não é uma Release estável.
 Licença [MIT](LICENSE), conforme declaração original; [avisos](LEGAL-NOTICE.md). Leaflet conserva a licença original.
 Contacto: [dsantananet](https://github.com/dsantananet); problemas em Issues deste repositório.
 
+
+## Perfil vertical / Tefigrama (experimental)
+
+Na estação selecionada, abrir **Perfil vertical / Tefigrama** e carregar o perfil. A previsão GFS Global (NOAA), via Open-Meteo, disponibiliza 48 horas UTC, temperatura, ponto de orvalho, altura geopotencial e vento em 16 níveis entre 1000 e 100 hPa. Níveis abaixo da pressão de superfície são excluídos. CAPE e CIN são fornecidos pelo modelo, sem reconstrução da parcela. O gráfico usa coordenadas T–entropia e mostra isóbaras e adiabáticas secas. A tabela e a exportação CSV preservam valores ausentes. SVG disponível no navegador.
+
+A localização/altitude da grelha e a distância à estação são indicadas; a altitude real da estação não é fornecida pelo catálogo atual. Não é uma radiossondagem observada. O ciclo de inicialização não é fornecido por esta resposta da API. LCL/LFC, trajetória da parcela, adiabáticas saturadas e Haines ainda não implementados. Inversões só são detetadas entre níveis válidos adjacentes, podendo faltar camadas finas. Novos dados requerem Internet e estão sujeitos aos limites Open-Meteo. Fonte: https://open-meteo.com/en/docs/gfs-api (CC BY 4.0).
+
+Validação inicial: 24 testes JavaScript, incluindo geometria T–entropia, níveis sob a superfície, dados ausentes e inversões. Consulta real GFS em 40°N, 7°W devolveu HTTP 200 e perfis válidos. Interface e APK ainda requerem teste visual e em dispositivo; não constitui validação científica operacional.

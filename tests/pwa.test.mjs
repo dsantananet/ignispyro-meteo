@@ -6,7 +6,7 @@ const root=new URL('../web/meteo/',import.meta.url);
 function worker(){
  const handlers={},deleted=[],added=[];let skipped=0,claimed=0;
  const scope='https://example.test/flame-lang/web/meteo/';
- const context={URL,Set,self:{registration:{scope},clients:{claim:async()=>{claimed++;}},skipWaiting:()=>{skipped++;},addEventListener:(name,handler)=>handlers[name]=handler},caches:{open:async()=>({addAll:async list=>added.push(...list),match:async()=>null}),keys:async()=>['unrelated-cache','ignispyro-meteo-old','ignispyro-meteo-1.2.0-rc.1-mobile1'],delete:async key=>{deleted.push(key);}},fetch:()=>{}};
+ const context={URL,Set,self:{registration:{scope},clients:{claim:async()=>{claimed++;}},skipWaiting:()=>{skipped++;},addEventListener:(name,handler)=>handlers[name]=handler},caches:{open:async()=>({addAll:async list=>added.push(...list),match:async()=>null}),keys:async()=>['unrelated-cache','ignispyro-meteo-old','ignispyro-meteo-1.2.0-rc.1-profiles1'],delete:async key=>{deleted.push(key);}},fetch:()=>{}};
  vm.runInNewContext(readFileSync(new URL('sw.js',root),'utf8'),context);
  return {handlers,deleted,added,scope,skipped:()=>skipped,claimed:()=>claimed};
 }

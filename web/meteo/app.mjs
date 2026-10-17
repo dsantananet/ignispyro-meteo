@@ -1,3 +1,4 @@
+import {selectSounding} from './sounding-ui.mjs';
 import {configureStations,showModels,exportModels} from './meteograms.mjs';
 import {fields,normalize,merge,series,forecast,csv,geojson,clock,number} from './engine.mjs';
 import {assess} from './decisions.mjs';
@@ -28,6 +29,7 @@ async function refresh(){
 function color(value,field){if(number(value)===null)return '#8995a5';const bounds={temperature:[0,40],humidity:[0,100],wind:[0,60],rain:[0,15]}[field];const fraction=Math.max(0,Math.min(1,(value-bounds[0])/(bounds[1]-bounds[0])));return `hsl(${220-220*fraction},85%,55%)`;}
 function render(){
   const time=times[Number($('time').value)], field=$('field').value,id=$('station').value;
+  selectSounding(rows.filter(r=>r.id===id).at(-1));
   if(!time)return;$('timestamp').textContent=time.replace('T',' ');
   const byStation=new Map();for(const r of rows){const lag=clock(time)-clock(r.time);if(lag>=0&&lag<=2*3600000)byStation.set(r.id,r);}const snapshot=[...byStation.values()];
   if(map){markers.clearLayers();for(const r of snapshot){const marker=L.circleMarker([r.lat,r.lon],{radius:r.id===id?10:6,color:r.id===id?'#fff':color(r[field],field),fillColor:color(r[field],field),fillOpacity:.85,weight:2});marker.bindTooltip(`${escape(r.name)} · ${fmt(r[field])} ${fields[field][1]} · ${escape(r.time)}`);marker.on('click',()=>{$('station').value=r.id;render();});marker.addTo(markers);}}
