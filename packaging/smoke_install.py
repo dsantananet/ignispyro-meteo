@@ -2,7 +2,7 @@
 import os,subprocess,tempfile,time,winreg
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
-installer=root/'release'/'IgnisPyroMeteo-1.2.0-rc.3-windows-x64-setup.exe'
+installer=root/'release'/'IgnisPyroMeteo-1.2.0-rc.4-windows-x64-setup.exe'
 key=r'Software\Microsoft\Windows\CurrentVersion\Uninstall\dsantananet.IgnisPyroMeteo_is1'
 try:
     existing=winreg.OpenKey(winreg.HKEY_CURRENT_USER,key);existing.Close()
