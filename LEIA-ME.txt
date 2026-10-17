@@ -1,14 +1,14 @@
-IgnisPyroMeteo — 1.2.0-rc.3 — versão experimental
+IgnisPyroMeteo — 1.2.0-rc.4 — versão experimental
 
 INSTALADOR WINDOWS
-1. Descarregue IgnisPyroMeteo-1.2.0-rc.3-windows-x64-setup.exe.
+1. Descarregue IgnisPyroMeteo-1.2.0-rc.4-windows-x64-setup.exe.
 2. Execute o instalador e siga o assistente.
 3. Abra IgnisPyroMeteo pelo menu Iniciar.
 Não precisa de instalar Python, Git ou Node.js.
 Desinstalar: Definições do Windows > Aplicações > IgnisPyroMeteo.
 
 VERSÃO PORTÁTIL ZIP
-1. Descarregue IgnisPyroMeteo-1.2.0-rc.3-windows-x64-portable.zip.
+1. Descarregue IgnisPyroMeteo-1.2.0-rc.4-windows-x64-portable.zip.
 2. Clique com o botão direito > Extrair tudo.
 3. Abra IgnisPyroMeteo.exe dentro da pasta extraída.
 Não retire o executável da pasta; a pasta _internal contém ficheiros necessários.

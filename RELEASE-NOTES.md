@@ -1,7 +1,7 @@
-# IgnisPyro Meteo 1.2.0-rc.3
+# IgnisPyro Meteo 1.2.0-rc.4
 
-Leitura do tefigrama orientada para incêndios rurais: convecção ambiente, ar seco em altitude, inversões e vento acima do terreno. Descrições atualizadas por estação/hora e repetidas na área Previsão de risco com identificação do perfil. Não atribui classe de perigo/risco nem prevê a coluna do incêndio.
+Descrição dinâmica abaixo do tefigrama, baseada nos materiais de leitura de perfis e Haines fornecidos: curvas, gradiente térmico, Haines intermédio e C-Haines, CAPE/CIN e implicações para incêndios rurais. Cada descrição acompanha a estação e a hora UTC e identifica dados ausentes.
 
-Painel reorganizado com gráfico e interpretação lado a lado no computador, cartões adaptados ao telemóvel, tabela recolhível, legenda e notas metodológicas. Mantém dados GFS identificados separadamente do ECMWF dos meteogramas.
+Haines e C-Haines calculados sobre GFS, sem caráter de produto oficial IPMA. Não atribui classe de risco, probabilidade de piroconvecção ou percentil de C-Haines sem climatologia local. A convenção de arredondamento do Haines discreto é indicada. Fórmulas e fontes documentadas no repositório.
 
-Windows x64: instalador e portátil. Android 8+: APK experimental em android-preview. Online: https://dsantananet.github.io/ignispyro-meteo/. Parcela de ar, LCL/LFC e Haines ainda indisponíveis; APK sem validação em dispositivo físico.
+Windows x64: instalador e portátil. Android 8+: APK experimental. Online: https://dsantananet.github.io/ignispyro-meteo/. LCL/LFC, trajetória de parcela e adiabáticas saturadas ainda indisponíveis; APK sem validação em dispositivo físico.

@@ -1,7 +1,7 @@
 [Setup]
 AppId=dsantananet.IgnisPyroMeteo
 AppName=IgnisPyroMeteo
-AppVersion=1.2.0-rc.3
+AppVersion=1.2.0-rc.4
 AppPublisher=dsantananet
 DefaultDirName={localappdata}\Programs\IgnisPyroMeteo
 DefaultGroupName=IgnisPyroMeteo
@@ -12,7 +12,7 @@ MinVersion=10.0
 UninstallDisplayIcon={app}\IgnisPyroMeteo.exe
 SetupIconFile=app.ico
 OutputDir=..\release
-OutputBaseFilename=IgnisPyroMeteo-1.2.0-rc.3-windows-x64-setup
+OutputBaseFilename=IgnisPyroMeteo-1.2.0-rc.4-windows-x64-setup
 Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern
