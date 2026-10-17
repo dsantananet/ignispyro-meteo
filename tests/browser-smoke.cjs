@@ -30,6 +30,8 @@ const assert=require('node:assert/strict');
   assert.equal(await page.locator('#sounding-table tr').nth(1).locator('td').first().innerText(),'925.0');
   await page.locator('#sounding-hour').selectOption('1');assert.match(await page.locator('#sounding-metrics').innerText(),/300.0/);
   const download=page.waitForEvent('download');await page.locator('#sounding-csv').click();const d=await download;const stream=await d.createReadStream();let csv='';for await(const chunk of stream)csv+=chunk;assert.ok(csv.split('\n').length>10);assert.ok(!csv.includes('\\n'));
+  await page.screenshot({path:'tephigram-mobile.png',fullPage:true});
+  console.log('Overflow elements:',await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth+1).map(e=>({tag:e.tagName,id:e.id,width:e.getBoundingClientRect().width,right:e.getBoundingClientRect().right})).slice(0,20)));
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
   assert.deepEqual(errors,[]);
   await page.screenshot({path:'tephigram-mobile.png',fullPage:true});
