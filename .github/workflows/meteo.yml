@@ -21,3 +21,12 @@ jobs:
           node --test tests/*.test.mjs
           python -m pip install -r requirements-meteo-crypto.txt
           python -B -m unittest discover -s tests -p 'test_*.py'
+      - name: Validate profile controls and exports in Chrome
+        run: |
+          npm install --prefix /tmp/meteo-browser playwright@1.58.2
+          NODE_PATH=/tmp/meteo-browser/node_modules node tests/browser-smoke.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tephigram-browser-screenshots
+          path: tephigram-*.png
