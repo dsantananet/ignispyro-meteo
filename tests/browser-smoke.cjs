@@ -23,7 +23,7 @@ const assert=require('node:assert/strict');
   });
   await page.goto('http://127.0.0.1:8877/');
   await page.waitForFunction(()=>document.querySelector('#station').options.length===1);
-  await page.locator('#sounding-panel summary').click();await page.locator('#load-sounding').click();
+  await page.locator('#sounding-panel > summary').click();await page.locator('#load-sounding').click();
   await page.waitForFunction(()=>document.querySelector('#sounding-table table'));
   assert.equal(await page.locator('.fire-card').count(),4);
   assert.match(await page.locator('#fire-summary').innerText(),/Energia convectiva indisponível/);
