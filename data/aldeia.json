@@ -1,21 +1,21 @@
 {
-  "fetchedAt": "2026-10-30T19:57:53.915169+00:00",
+  "fetchedAt": "2026-10-30T23:41:30.994422+00:00",
   "source": "https://www.wunderground.com/dashboard/pws/IALDEI10",
   "observations": [
     {
       "id": "IALDEI10",
       "name": "DsantananetMETEO · Aldeia do Bispo",
       "source": "Weather Underground",
-      "time": "2026-10-30T19:57:04Z",
+      "time": "2026-10-30T23:40:44Z",
       "lon": -7.167114,
       "lat": 40.122506,
-      "temperature": 11.5,
-      "humidity": 75.0,
+      "temperature": 9.0,
+      "humidity": 81.0,
       "wind": 0.0,
       "rain": null,
-      "gust": 0.0,
+      "gust": 0.6,
       "pressure": 1010.84,
-      "dewpoint": 7.2
+      "dewpoint": 5.8
     }
   ]
 }
