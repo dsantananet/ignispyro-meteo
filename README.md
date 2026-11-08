@@ -10,14 +10,14 @@ Aldeia do Bispo (IALDEI10) e mantém o Borda d’Água digital para agronomia. N
 
 | Versão | Ligação | Como utilizar |
 | --- | --- | --- |
-| **Windows 10/11 · instalador x64** | [Descarregar EXE](https://github.com/dsantananet/ignispyro-meteo/releases/download/v1.2.0-rc.4/IgnisPyroMeteo-1.2.0-rc.4-windows-x64-setup.exe) | Executar e seguir o assistente. |
-| **Windows · portátil x64** | [Descarregar ZIP portátil](https://github.com/dsantananet/ignispyro-meteo/releases/download/v1.2.0-rc.4/IgnisPyroMeteo-1.2.0-rc.4-windows-x64-portable.zip) | Extrair o ZIP e executar IgnisPyroMeteo.exe; não requer instalação. |
+| **Windows 10/11 · instalador x64** | [Descarregar EXE](https://github.com/dsantananet/ignispyro-meteo/releases/download/v1.2.0-rc.5/IgnisPyroMeteo-1.2.0-rc.5-windows-x64-setup.exe) | Executar e seguir o assistente. |
+| **Windows · portátil x64** | [Descarregar ZIP portátil](https://github.com/dsantananet/ignispyro-meteo/releases/download/v1.2.0-rc.5/IgnisPyroMeteo-1.2.0-rc.5-windows-x64-portable.zip) | Extrair o ZIP e executar IgnisPyroMeteo.exe; não requer instalação. |
 | **Android · instalar pelo Chrome (PWA)** | [Abrir versão online](https://dsantananet.github.io/ignispyro-meteo/) | Chrome → ⋮ → Adicionar ao ecrã principal → Instalar. |
 | **Android 8+ · APK experimental** | [Descarregar APK](https://github.com/dsantananet/ignispyro-meteo/releases/download/android-preview/IgnisPyroMeteo-android-experimental.apk) · [Estado da compilação](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/android.yml) | Abrir o APK e autorizar a instalação por este navegador quando o Android pedir. |
 | **Online · computador, telemóvel e tablet** | [Abrir no navegador](https://dsantananet.github.io/ignispyro-meteo/) · [Estado da publicação](https://github.com/dsantananet/ignispyro-meteo/actions/workflows/online.yml) | Sem descarregar nem instalar programas. |
 
 [Todos os ficheiros e versões](https://github.com/dsantananet/ignispyro-meteo/releases).
-Windows atualizado para a versão candidata 1.2.0-rc.4, com tefigramas, leitura para incêndios e apresentação harmonizada. **APK Android 1.2.0-rc.4 com tefigramas e leitura para incêndios publicado**: compilação, lint e publicação [concluídos com sucesso](https://github.com/dsantananet/ignispyro-meteo/actions/runs/39069107630). **Online/PWA ativo**: [abrir IgnisPyro Meteo](https://dsantananet.github.io/ignispyro-meteo/). Publicação verificada com sucesso em 17/10/2026.
+Versão candidata 1.2.0-rc.5: acrescenta o **meteograma de incêndios por ponto** (coordenadas livres, GFS via Open-Meteo, exportação SVG e CSV). Instalador Windows, portátil, APK Android e versão online são gerados pelas compilações automáticas; o estado de cada uma está nas ligações «Estado da compilação» e «Estado da publicação» acima. **Online/PWA**: [abrir IgnisPyro Meteo](https://dsantananet.github.io/ignispyro-meteo/).
 
 ### Versão online ativa
 
@@ -33,7 +33,7 @@ O **APK experimental** inclui a interface e permite exportar CSV/GeoJSON pelo se
 
 ## Instalação para utilizadores
 
-A versão experimental Windows x64 está publicada em [Releases](https://github.com/dsantananet/ignispyro-meteo/releases/tag/v1.2.0-rc.4), com instalador, ZIP portátil, instruções e SHA256.
+A versão experimental Windows x64 está publicada em [Releases](https://github.com/dsantananet/ignispyro-meteo/releases/tag/v1.2.0-rc.5), com instalador, ZIP portátil, instruções e SHA256.
 Descarregue `IgnisPyroMeteo-…-windows-x64-setup.exe`, execute o assistente e abra IgnisPyroMeteo
 no menu Iniciar. Python, Node.js e Git não são necessários.
 O painel abre no navegador; mantenha a pequena janela IgnisPyro Meteo aberta.
@@ -43,7 +43,8 @@ O ZIP de código-fonte não é um instalador.
 ## Como utilizar
 
 1. Clique em Atualizar IPMA e aguarde as observações.
-2. Escolha variável, estação e horário; consulte mapa e meteogramas de temperatura, humidade, vento, rajadas, chuva, pressão, nebulosidade e ponto de orvalho.
+2. Para um ponto qualquer, abra **Meteograma de incêndios · ponto específico**, indique as coordenadas e gere o gráfico (exportável em SVG/CSV).
+3. Escolha variável, estação e horário; consulte mapa e meteogramas de temperatura, humidade, vento, rajadas, chuva, pressão, nebulosidade e ponto de orvalho.
 3. Escolha uma estação, uma seleção ou todas, e carregue as previsões. No separador **Previsão de risco**, copie o boletim para análise de incêndios ou partilha no Telegram. Não são enviadas mensagens. Exporte observações em CSV/GeoJSON e previsões em CSV separado.
 4. Feche a janela de controlo para terminar o servidor local.
 
@@ -74,6 +75,13 @@ Para compilar no Windows: instale `requirements-build.txt`, execute `python pack
 e compile `packaging/windows.iss` com Inno Setup 6.7.3.
 O guia [METEO.md](METEO.md) mantém detalhes históricos; os comandos de desenvolvimento não são necessários
 para instalar o pacote autónomo. Conteúdos antigos sobre alojamento FlameLang devem ser revistos antes da migração pública.
+
+## Novidades do candidato 1.2.0-rc.5
+
+Painel **Meteograma de incêndios · ponto específico**: introduza latitude e longitude (ou use a estação selecionada) e a aplicação desenha, para as próximas 72 horas (UTC), humidade relativa, temperatura (com ponto de orvalho e depressão), precipitação, vento e rajadas, direção do vento, camada limite e CAPE, a partir do GFS Global via Open-Meteo, com superfície, 950 e 900 hPa. Calcula ainda três estimativas a partir do modelo: humidade de equilíbrio do combustível fino (Simard, 1968), Índice de Haines (variante baixa, média ou alta conforme a altitude do ponto) e Hot-Dry-Windy (VPD × vento nos primeiros 500 m AGL, aproximado com 2 m/10 m e 950 hPa).
+
+Limites: é previsão de grelha, não observação, e não substitui o AROME do IPMA nem os avisos oficiais. O ECMWF da Open-Meteo não devolve os níveis 950/900 hPa nem a camada limite, por isso este painel usa o GFS. FWI horário e probabilidade de trovoada não estão incluídos (sem fonte fiável nesta integração); o CAPE é um indicador de instabilidade, não uma probabilidade. Exportação SVG (gráfico) e CSV (dados e proveniência).
+
 
 ## Novidades do candidato 1.2.0-rc.4
 
